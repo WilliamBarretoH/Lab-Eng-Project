@@ -1,7 +1,10 @@
 package calculadora.controller;
 
-import calculadora.model.entity.User;
+
+import calculadora.model.dao.HistoryDAO;
 import calculadora.model.dao.UserDAO;
+import calculadora.model.entity.History;
+import calculadora.model.entity.User;
 
 public class Teste {
 
@@ -9,23 +12,30 @@ public class Teste {
 	public static void main(String[] args) {
 	
 		UserDAO ud = new UserDAO();
+		HistoryDAO historyDAO = new HistoryDAO();
 		
 		String email = "will";
 		String password = "12356";
+		
 		User user = new User();
 		user.setEmail(email);
 		user.setPassword(password);
 		
-//		ud.createUser(user);
+		float input1 = 4;
+		float input2 = 3;
+		float result = input1 + input2;
+		//ud.createUser(user);
 		
-//		user = ud.findByEmail(email);
+		History history1 = new History(user);
 		
-		if(ud.validate(email, password)) {
-			System.out.println("usuario validado");
-			
-		}else {
-			System.out.println("usuario invalido");
-		}
+		
+		
+		historyDAO.createHistory(history1);
+		
+		
+		
+		
+		
 		
 		System.out.println("email encontrado" + user.getEmail());
 	}

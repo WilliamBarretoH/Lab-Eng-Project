@@ -12,7 +12,7 @@
 
         <!-- Aqui são listadas todas as entidades -->
         <class>calculadora.model.User</class>
-		<class>calculadora.model.Calculator</class>
+		<class>calculadora.model.History</class>
         <properties>    
             <!-- Propriedades JDBC -->
             <property name="javax.persistence.jdbc.driver" 
